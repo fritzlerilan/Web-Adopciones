@@ -45,6 +45,19 @@ body,
     font-size: 2.5rem;
 }
 
+/* Buttons */
+.btn{
+    display: inline-block;
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
+    background-color: rgba(241, 193, 34, 0.8);
+    border-radius: 6px;
+}
+
+.btn--cta{
+    font-size: 1.4rem;
+}
 
 /* Navigation */
 
@@ -91,19 +104,48 @@ body,
         url(../images/hero-dog.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-
+    background-position: center;
 }
 
 .hero__info{
     display: flex;
-    width: 95%;
+    width: auto;
+    text-align: center;
     margin: auto 0 200px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+
 }
 
-.hero__info{
-    width: auto;
+
+
+@media only screen and (max-width: 600px){
+    .nav{
+        align-items: stretch;
+        padding: .2rem 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .nav__links{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav__link{
+        display: inline-block;
+        margin-left: 0px;
+    }
+    
+    .hero__info{
+        margin: auto 0 100px;
+    }
+
+    .btn--cta{
+        font-size: 1.1rem;
+    }
 }
