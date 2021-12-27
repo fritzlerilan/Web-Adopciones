@@ -19,6 +19,11 @@ li {
 
 body{
     width: 100vw;
+    overflow-x: hidden;
+}
+
+main{
+    margin: 0 auto; 
 }
 
 body,
@@ -59,6 +64,21 @@ body,
     font-size: 1.4rem;
 }
 
+/* Containers */
+.inner_container{
+    width: 90%;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rounded{
+    border-radius: 8px;
+}
+
 /* Navigation */
 
 .logo{
@@ -71,7 +91,7 @@ body,
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: .2rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .nav__links{
@@ -94,8 +114,10 @@ body,
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
+}
 
+.hero_header{
     background-image: 
         linear-gradient(
             transparent,
@@ -108,20 +130,73 @@ body,
 }
 
 .hero__info{
-    display: flex;
     width: auto;
     text-align: center;
     margin: auto 0 200px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
+}
 
+.hero__info .title{
+    min-width: 90%;
 }
 
 
+/* Banner Section */
 
-@media only screen and (max-width: 600px){
+.banners,
+.banner--info{
+    width: 50%;
+}
+
+.banners{
+    flex-direction: column;
+    height: 100vh; /* Cambiar alto por pixeles fijos*/
+}
+
+.banner--info{
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+}
+
+.banner{
+    position: relative;
+    width: 500px;
+    height: 170px;
+    margin: 1rem 0;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.banner--info h2{
+    padding-bottom: 1rem;
+}
+
+.banner--info p{
+    line-height: 1.5rem;
+}
+
+
+.banner h3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 170px;
+    color: #f8f8f8;
+    font-size: 2rem;
+    text-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+}
+
+
+@media only screen and (max-width: 576px){
     .nav{
         align-items: stretch;
         padding: .2rem 2rem;
