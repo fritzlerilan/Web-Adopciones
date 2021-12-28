@@ -26,10 +26,15 @@ main{
     margin: 0 auto; 
     flex-direction: column;
     width: 100vw;
+    grid-area: "main-section";
 }
 
 h2{
     font-size: 2rem;
+}
+
+h3{
+    font-size: 1.3rem;
 }
 
 body,
@@ -42,19 +47,10 @@ body,
         "header"
         "main-section"
         "footer";
-    grid-template-rows: 100vh 1fr 600px;
+    grid-template-rows: 100vh 1fr 300px;
     grid-template-columns: 100vw;
 }
 
-/* Font sizes */
-
-.text-m{
-    font-size: 1.2rem;
-}
-
-.text-xl{
-    font-size: 2.5rem;
-}
 
 /* Buttons */
 .btn{
@@ -74,6 +70,16 @@ body,
     border-radius: 8px;
 }
 
+.icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.icon i{
+    font-size: 25px;
+    line-height: 25px;
+}
 
 /* Containers */
 .inner_container{
@@ -123,6 +129,7 @@ body,
     align-items: center;
     justify-content: space-between;
     width: 100vw;
+    grid-area: "header";
 }
 
 .hero_header{
@@ -282,6 +289,76 @@ body,
     width: 90%;
 }
 
+
+/* Grid Footer */
+
+.footer{
+    grid-area: "footer";
+    background-color: rgb(124, 0, 207);
+    color: white;
+}
+
+.footer .inner_container{
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "f-info f-menu f-mailing f-redes";
+    height: 100%;
+}
+
+.footer--info{
+    grid-area: f-info;
+    width: 200px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.footer--menu{
+    grid-area: f-menu;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer--menu nav ul{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.footer--mailing{
+    grid-area: f-mailing;
+    padding: 1rem;
+}
+.footer--mailing form{
+    margin-top: 1rem;
+    background-color: grey;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-around;
+}
+
+.footer--mailing input{
+    width: 100%;
+    line-height: 1.5rem;
+    padding-left: .5rem;
+}
+
+.footer--mailing label{
+    font-size: .9rem;
+}
+
+.footer--social{
+    grid-area: f-redes;
+    padding: 1rem;
+}
+
+
 @media only screen and (max-width: 576px){
     .nav{
         align-items: stretch;
@@ -407,5 +484,59 @@ body,
         right: 0;
     }
 
+
+        /* Grid Footer */
+
+    .home{
+        grid-template-rows: 100vh 1fr 700px;
+    }
+
+    .footer{
+        grid-area: "footer";
+        background-color: rgb(124, 0, 207);
+        color: white;
+        height: 1000px;
+    }
+
+    .footer .inner_container{
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas: 
+            "f-info"
+            "f-menu"
+            "f-mailing"
+            "f-redes";
+        height: 100%;
+    }
+
+    .footer--info{
+        grid-area: f-info;
+        width: 100%;
+    }
+    .footer--menu{
+        grid-area: f-menu;
+        width: 300px;
+
+
+    }
+    .footer--mailing form{
+        height: 200px;
+    }
+
+    .footer--mailing input{
+        width: 100%;
+        line-height: 1.5rem;
+        padding-left: .5rem;
+    }
+
+    .footer--mailing label{
+        font-size: .9rem;
+    }
+
+    .footer--social{
+        grid-area: f-redes;
+        padding: 1rem;
+    }
+    
 }
 
